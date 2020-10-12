@@ -10,7 +10,7 @@
 int main(int argc, char* argv[])
 {
     // args/params for simulation
-    int no_agents = 10;
+    int no_agents = 20;
     std::array<double, 3> probs = { 0.85, 0.1, 0.05 };
 
     // init simulation
