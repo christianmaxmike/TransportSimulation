@@ -1,5 +1,5 @@
 //
-// environment.h
+// constants.h
 //
 // @author: Christian Frey
 //
