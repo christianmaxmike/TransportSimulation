@@ -9,16 +9,12 @@
 
 int main(int argc, char* argv[])
 {
-    // args/params for simulation
-    int no_agents = 20;
-    std::array<double, 3> probs = { 0.85, 0.1, 0.05 };
-
-    // init simulation
+    // init modules for simulation
     Environment env(ENV_HEIGHT, ENV_WIDTH);
     Scheduler scheduler(TIME_STEP);
-    Model model(no_agents, probs, env, scheduler);
 
     // init model
+    Model model(NO_AGENTS, VEHICLES_PROBS, env, scheduler);
     model.init();
 
     // start simulation model

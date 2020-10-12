@@ -6,6 +6,11 @@
 // This header is used for the constants/intervals used for the simulation.
 //
 #pragma once
+#include <array>
+
+// *** GENERAL
+const int NO_AGENTS = 20;
+const std::array<double, 3> VEHICLES_PROBS = { 0.85, 0.1, 0.05 };
 
 // *** VEHICLES VALUES ***
 // BUS 
