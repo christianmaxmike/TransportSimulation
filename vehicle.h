@@ -1,5 +1,5 @@
 //
-// taxi.h
+// vehicle.h
 //
 // @author: Christian Frey
 //
@@ -38,11 +38,18 @@ protected:
 	// updatet the orientation/angle of the vehicle
 	void updateDegree();
 
+	// method called when the vehicles leaves the simulation
 	virtual void dropVehicle() {};
 
 public: 
 	// Default Constructor
 	Vehicle() {};
+
+	// Constructor for an vehicle
+	//
+	// Parameters: 
+	// id: unique id of the vehicle
+	// no_passengers: number of passengers in the vehicle
 	Vehicle(int id, int no_passengers);
 
 	// place the vehicle within the environment (randomly)

@@ -4,7 +4,7 @@
 // @author: Christian Frey
 //
 // This header is used for the descirption of the model for the simulation. 
-//It holds the instances of the environment and scheduler.
+// It holds the instances of the environment and scheduler.
 //
 #pragma once
 #include "environment.h"
@@ -20,11 +20,21 @@ private:
 	Environment env;	// environment the agents live in
 	Scheduler scheduler;// scheduling for the agents
 	std::array<double, 3> vehicleDistribution; // distribution for vehicles type
-	std::map<std::string, std::map<std::string, std::vector<double>>> summary;
 
+	// summary including the vehicles information after they drop off the environment
+	std::map<std::string, std::map<std::string, std::vector<double>>> summary;	
+
+	// adds the vehicles information being attached as parameter to the summary recordings
 	void addToSummary(Vehicle* v);
 
 public:
+	// Constructor a model holding the simulation's necessary instances
+	// 
+	// Parameter:
+	// no_agents: number of agents within the simulation
+	// probs: probability distribution of the various vehicles
+	// env: 2D environment being used for the simulation
+	// scheduler: Scheduler handling the ordering of the agents actions within the simulation
 	Model (int no_agents, std::array<double, 3> probs, Environment env, Scheduler scheduler) 
 		: no_agents{ no_agents }, vehicleDistribution{ probs }, 
 		  env{ env }, scheduler{ scheduler } {}
@@ -41,6 +51,6 @@ public:
 	// check if agents fullfill validity check
 	void checkAgentsValidity();
 
-	//print summary
+	//print summary (called at the end of the simulation)
 	void printSummary();
 };

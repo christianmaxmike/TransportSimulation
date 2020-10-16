@@ -14,8 +14,12 @@ private:
 	int height;		// environment's y-span
 	int width;		// environment's x-span
 public:
-	Environment(int height, int width) 
-		: height{ height }, width{ width } {};
+	// Constructor for the 2D environment
+	//
+	// Parameters:
+	// height: height of the environment
+	// widht: width of the environment
+	Environment(int height, int width) : height{ height }, width{ width } {};
 
 	// get the height of the environment
 	int getHeight() { return height; }
