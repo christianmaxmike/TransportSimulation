@@ -14,7 +14,7 @@
 #include <algorithm>
 
 void Model::init() {
-	for (std::pair<int, int> p(0, 0); p.first < vehicleDistribution.size(); ++p.first) {
+	for (std::pair<int, int> p(0, 0); p.first < (int) vehicleDistribution.size(); ++p.first) {
 		for (int j = 0; j < vehicleDistribution[p.first] * no_agents; j++, p.second++) {
 			Vehicle* v;
 			if (p.first == 0)
@@ -51,18 +51,18 @@ void Model::addToSummary(Vehicle* pEntity) {
 
 	if (instanceof<PrivateCar>(pEntity)) {
 		summary["privateCar"]["traveledDistance"].push_back(pEntity->getTraveledDistance());
-		summary["privateCar"]["lifetime"].push_back(lifetime);
+		summary["privateCar"]["lifetime"].push_back((double) lifetime);
 	}
 	else if (instanceof<Taxi>(pEntity)) {
 		Taxi* taxi = dynamic_cast<Taxi*>(pEntity);
 		summary["Taxi"]["traveledDistance"].push_back(taxi->getTraveledDistance());
-		summary["Taxi"]["lifetime"].push_back(lifetime);
+		summary["Taxi"]["lifetime"].push_back((double) lifetime);
 		summary["Taxi"]["FREETime"].push_back(taxi->getFreeTime());
 		summary["Taxi"]["HIREDTIme"].push_back(taxi->getHiredTime());
 	}
 	else if (instanceof<Bus>(pEntity)) {
 		summary["Bus"]["traveledDistance"].push_back(pEntity->getTraveledDistance());
-		summary["Bus"]["lifetime"].push_back(lifetime);
+		summary["Bus"]["lifetime"].push_back((double) lifetime);
 	}
 
 }

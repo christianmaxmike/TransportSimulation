@@ -42,7 +42,7 @@ public:
 	void callTaxi();
 
 	// calls vehicle specific update methods
-	void update(double timeStep, Environment env) override;
+	void update(int timeStep, Environment env) override;
 
 	// used to print the taxis info
 	const void printInfo() const override;

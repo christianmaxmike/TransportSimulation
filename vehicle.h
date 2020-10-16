@@ -24,7 +24,7 @@ protected:
 	double velocity = -1;		// velocity of vehicle
 	double degree = 0;			// direction of vehicle
 	double traveledDistance = 0;// total traveled distance [m]
-	coordinates coords;			// coordinates of vehicle
+	coordinates coords{};		// coordinates of vehicle
 
 	// point in time of creation in env
 	std::chrono::time_point<std::chrono::high_resolution_clock> birthTimePoint;
@@ -65,7 +65,7 @@ public:
 	std::chrono::time_point<std::chrono::high_resolution_clock> getBirthTimePoint() { return birthTimePoint; }
 	
 	// public update method calling vehicle-dependent update fncs
-	virtual void update(double timeStep, Environment env);
+	virtual void update(int timeStep, Environment env);
 
 	// starts running time of vehicle in environment
 	virtual void startLife();

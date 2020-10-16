@@ -11,6 +11,9 @@
 struct coordinates {
 	double pos_x; // x-coordinate
 	double pos_y; // y-coordinate
+
+	coordinates() : pos_x(0), pos_y(0) {};
+	coordinates(double x, double y) : pos_x(x), pos_y(y) {};
 };
 
 // random number generator within the interval [a,b]

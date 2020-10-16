@@ -13,8 +13,8 @@
 class Bus : public Vehicle
 {
 private: 
-	int capacity;						// total capacity of the bus entity
-	std::chrono::milliseconds last_stop;// aggregated time since last bus stop [ms]
+	int capacity = 0;						// total capacity of the bus entity
+	std::chrono::milliseconds last_stop{ 0 };// aggregated time since last bus stop [ms]
 
 public:
 	// default constructor
@@ -32,7 +32,7 @@ public:
 
 	// updating all relevant infos for an bus instance according to 
 	// the scheduler's simulation time 
-	void update(double timeStep, Environment env) override;
+	void update(int timeStep, Environment env) override;
 
 	// simulates a bus stop
 	void busStop(int simulationTime);

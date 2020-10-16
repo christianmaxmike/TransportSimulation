@@ -28,7 +28,7 @@ void Bus::busStop(int simulationtime) {
 	}
 }
 
-void Bus::update(double timeStep, Environment env) {
+void Bus::update(int timeStep, Environment env) {
 	updateTravelledDistance(timeStep);
 	updatePosition(timeStep, env);
 	updateDegree();
